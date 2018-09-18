@@ -3,6 +3,16 @@ import java.net.URL;
 import java.util.Scanner;
 
  public class Web {
+     public static int wordCounting (final String url){
+         String text =  urlToString(url);
+         int number = 0;
+         for (int i = 0; i < text.length() - 1; i++) {
+            if (text.substring(i, i + 1).equals(" ")) {
+                number += 1;
+            }
+         }
+         return number;
+     }
      /**
       * Retrieve contents from a URL and return them as a string.
       *
@@ -21,3 +31,4 @@ import java.util.Scanner;
          return contents;
      }
  }
+
